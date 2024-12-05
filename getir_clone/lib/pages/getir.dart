@@ -92,7 +92,7 @@ class getir extends StatelessWidget {
             // Slider
             SliverToBoxAdapter(
               child: SizedBox(
-                height: 260, // Slider yüksekliği
+                height: 200,
                 child: PageView.builder(
                   itemCount: imagePaths.length,
                   itemBuilder: (context, index) {
@@ -116,12 +116,12 @@ class getir extends StatelessWidget {
         body: GridView.builder(
           padding: EdgeInsets.all(8.0),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 4, // Her satırda 4 kare
-            crossAxisSpacing: 8.0, // Kareler arası yatay boşluk
-            mainAxisSpacing: 8.0, // Kareler arası dikey boşluk
-            childAspectRatio: 1.0, // Kare oranı
+            crossAxisCount: 4,
+            crossAxisSpacing: 8.0,
+            mainAxisSpacing: 8.0,
+            childAspectRatio: 1.0,
           ),
-          itemCount: categoryNames.length, // Kategori listesine göre kare sayısı
+          itemCount: categoryNames.length,
           itemBuilder: (context, index) {
             return Container(
               color: Colors.white,
@@ -130,13 +130,53 @@ class getir extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    categoryNames[index], // Kategorinin adı
+                    categoryNames[index],
                     style: TextStyle(color: Colors.black, fontSize: 16),
                   ),
                 ],
               ),
             );
           },
+        ),
+      ),
+    bottomNavigationBar: BottomAppBar(
+    color: Colors.white,
+    child: Padding(
+    padding: const EdgeInsets.all(5.0),
+    child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceAround,
+    children: [
+    IconButton(
+    icon: Icon(Icons.home, color: Colors.purple),
+    onPressed: () {
+
+    },
+    ),
+    IconButton(
+    icon: Icon(Icons.search, color: Colors.black12),
+    onPressed: () {
+
+    },
+    ),
+    IconButton(
+    icon: Icon(Icons.circle, color: Colors.black12),
+    onPressed: () {
+
+    },
+    ),
+    IconButton(
+    icon: Icon(Icons.account_circle, color: Colors.black12),
+    onPressed: () {
+
+       },
+              ),
+      IconButton(
+        icon: Icon(Icons.card_giftcard_rounded, color: Colors.black12),
+        onPressed: () {
+        },
+      ),
+            ],
+          ),
         ),
       ),
     );

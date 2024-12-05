@@ -156,7 +156,7 @@ class _AppBarWithArrowState extends State<HomePage> {
               ],
             ),
           ),
-          // Küçük kategoriler
+          // diğer kategoriler
           Expanded(
             child: GridView.builder(
               padding: const EdgeInsets.symmetric(horizontal: 13),
@@ -165,7 +165,7 @@ class _AppBarWithArrowState extends State<HomePage> {
                 crossAxisCount: 2, // Bir satırda 2 kutu
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
-                mainAxisExtent: 75, // Her kutunun yüksekliği
+                mainAxisExtent: 75,
               ),
               itemBuilder: (context, index) {
                 return GestureDetector(
