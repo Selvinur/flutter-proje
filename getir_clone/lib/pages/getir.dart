@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:getir_clone/pages/campaigns.dart';
+import 'package:getir_clone/pages/home_page.dart';
+import 'package:getir_clone/pages/profile.dart';
+import 'package:getir_clone/pages/search.dart';
 
 class getir extends StatelessWidget {
   final List<String> imagePaths = [
@@ -33,7 +37,6 @@ class getir extends StatelessWidget {
     "Bebek",
     "Cinsel Sağlık",
   ];
-
 
   @override
   Widget build(BuildContext context) {
@@ -139,42 +142,58 @@ class getir extends StatelessWidget {
           },
         ),
       ),
-    bottomNavigationBar: BottomAppBar(
-    color: Colors.white,
-    child: Padding(
-    padding: const EdgeInsets.all(5.0),
-    child: Row(
-    mainAxisAlignment: MainAxisAlignment.spaceAround,
-    children: [
-    IconButton(
-    icon: Icon(Icons.home, color: Colors.purple),
-    onPressed: () {
-
-    },
-    ),
-    IconButton(
-    icon: Icon(Icons.search, color: Colors.black12),
-    onPressed: () {
-
-    },
-    ),
-    IconButton(
-    icon: Icon(Icons.circle, color: Colors.black12),
-    onPressed: () {
-
-    },
-    ),
-    IconButton(
-    icon: Icon(Icons.account_circle, color: Colors.black12),
-    onPressed: () {
-
-       },
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.all(5.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              IconButton(
+                icon: Icon(Icons.home, color: Colors.purple),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => getir()),
+                  );
+                },
               ),
-      IconButton(
-        icon: Icon(Icons.card_giftcard_rounded, color: Colors.black12),
-        onPressed: () {
-        },
-      ),
+              IconButton(
+                icon: Icon(Icons.search, color: Colors.black12),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => search()),
+                  );
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.circle, color: Colors.black12),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomePage()),
+                  );
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.account_circle, color: Colors.black12),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => profile()),
+                  );
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.card_giftcard_rounded, color: Colors.black12),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => campaigns()),
+                  );
+                },
+              ),
             ],
           ),
         ),
